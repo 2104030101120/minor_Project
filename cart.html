@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function hide_show(){
+           var x=document.getElementById("main");
+           
+           if(x.style.display==="none"){
+            x.style.display="block"
+           }
+
+           else{
+            x.style.display="none"
+           }
+        
+        }
+    </script>
+
+    <style>
+        #main{
+            background-color: green;
+            height: 100px;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="main">this is main div</div>
+    <button onclick="hide_show()">click here</button>
+    
+</body>
+</html>

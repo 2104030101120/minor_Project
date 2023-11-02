@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        const scriptURL ="https://script.google.com/macros/s/AKfycbzlsfIajv8Z86x33ZmPaHAq6LTXz5bOPdvvSsGJB_EDP46-IeobPqerJuevji7-ysaoqw/exec"
+    
+        const form = document.forms['text']
+    
+    form.addEventListener('submit', e => {
+      e.preventDefault()
+      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+      .then(response => alert("Thank you! your form is submitted successfully." ))
+      .then(() => { window.location.reload(); })
+      .catch(error => console.error('Error!', error.message))
+    })
+    </script>
+</head>
+<body>
+    <form  method="post">
+        <input type="text" name="" id="text" name="text">
+        <button type="submit">submit
+        </button>
+
+    </form>
+</body>
+</html>

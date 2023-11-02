@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Payment System</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .payment-options {
+            display: flex;
+            justify-content: space-around;
+        }
+        .payment-option {
+            width: 30%;
+            padding: 20px;
+            border: 1px solid #ccc;
+            text-align: center;
+            cursor: pointer;
+        }
+        .payment-option:hover {
+            background-color: #f0f0f0;
+        }
+        .payment-option.selected {
+            background-color: #4CAF50;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <h1>Select a Payment Option</h1>
+    <div class="payment-options">
+        <div class="payment-option" id="codOption">
+            <h2>Cash on Delivery</h2>
+        </div>
+        <div class="payment-option" id="cardOption">
+            <h2>Credit/Debit Card</h2>
+        </div>
+        <div class="payment-option" id="upiOption">
+            <h2>UPI</h2>
+        </div>
+    </div>
+
+    <div id="paymentDetails">
+        <!-- Payment form fields can be added here -->
+    </div>
+
+    <script>
+        const paymentOptions = document.querySelectorAll(".payment-option");
+        const paymentDetails = document.getElementById("paymentDetails");
+
+        paymentOptions.forEach(option => {
+            option.addEventListener("click", () => {
+                // Remove the "selected" class from all options
+                paymentOptions.forEach(opt => opt.classList.remove("selected"));
+                // Add the "selected" class to the clicked option
+                option.classList.add("selected");
+
+                // Show or hide payment details based on the selected option
+                if (option.id === "codOption") {
+                    paymentDetails.innerHTML = "Cash on Delivery instructions here";
+                } else if (option.id === "cardOption") {
+                    paymentDetails.innerHTML = "Credit/Debit Card form here";
+                } else if (option.id === "upiOption") {
+                    paymentDetails.innerHTML = "UPI payment details here";
+                }
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="login-signup.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="hero">
+        <div class="form-box">
+            <div class="button-box">
+                <div id="btn"></div>
+                <button type="button" class="toggle-btn"  onclick="login()">Log In</button>
+                <button type="button" class="toggle-btn" onclick="signup()">Sign up</button>
+            </div>
+         
+            <form action=""   id="login" class="input-group">
+                <input type="text" class="input-field" placeholder="User Id"  id="username">
+                <input type="text" class="input-field" placeholder="Enter Password" id="password">
+               <a href="forget.html"> <input  type="checkbox" id="forgetpassword"   class="check-box">forget password</a> 
+               <a href="index.html"> <button type="button" class="submit-btn" onclick=validate()>Log in  </button></a>
+
+            </form>
+
+            <form action="" id="signup" class="input-group">
+                <input type="text" class="input-field" placeholder="User Id" required>
+                <input type="email" class="input-field" placeholder="E-mail Id" required>
+
+                <input type="text" class="input-field" placeholder="Enter Password" required>
+                <input type="checkbox" class="check-box"><span>I agree to the terms and conditions</span>
+                <button type="submit" class="submit-btn">Sign up</button>
+
+            </form>
+
+            
+        </div>
+        
+    </div>
+
+    <script>
+        var x = document.getElementById("login");
+        var y = document.getElementById("signup");
+        var z = document.getElementById("btn");
+        var a = document.getElementById("forget-password");
+
+
+        function signup(){
+            x.style.left = "-400px";
+            y.style.left = "50px";
+            z.style.left = "110px";
+        }
+        function login(){
+            x.style.left = "50px";
+            y.style.left = "450px";
+            z.style.left = "0px";
+        }
+        
+    </script>
+    <script>
+        function validate(){
+    var username=document.getElementById("username").value;
+    var password=document.getElementById("password").value;
+
+    if( username=="admin" && password=="admin123"){
+        alert("LOGIN SUCCESSFUL");
+        window.location.href = "index.html";
+        return false;
+    }
+    else{
+        alert("invalid id or password") 
+    }
+    
+}
+
+    </script>
+
+</body>
+</html>

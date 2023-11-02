@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="address.css">
+    <link rel="stylesheet" href="">
+    <style>
+         .payment-options {
+            display: flex;
+            justify-content: space-around;
+        }
+        .payment-option {
+            width: 30%;
+            padding: 20px;
+            border: 1px solid #ccc;
+            text-align: center;
+            cursor: pointer;
+        }
+        .payment-option:hover {
+            background-color: #f0f0f0;
+        }
+        .payment-option.selected {
+            background: #4CAF50;
+            color: #fff;
+        }
+    </style>
+    <script>
+   // function submitAddress() {
+     //   const fullName = document.getElementById('full-name').value;
+       // const address = document.getElementById('address').value;
+        //const city = document.getElementById('city').value;
+        //const state = document.getElementById('state').value;
+        //const zip = document.getElementById('zip').value;
+    
+        // You can add validation logic here
+        //if (!fullName || !address || !city || !state || !zip) {
+            //alert('Please fill in all address fields.');
+          //  return;
+        //}
+    
+        // Construct and send the address data to the server (not shown in this basic example)
+        // You can use AJAX or fetch API to send data to your server for processing.
+        
+        // For this example, we'll just display an alert with the submitted data.
+        //const addressData = `Full Name: ${fullName}\nAddress: ${address}\nCity: ${city}\nState: ${state}\nZip Code: ${zip}`;
+        //alert(`Address submitted:\n${addressData}`);
+    //}
+</script>
+<script> let scriptURL = "" 
+let form = document.forms['orderform']
+ form.addEventListener('submit',(e) => 
+ { e.preventDefault()
+     fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+     .then(response => alert("Thank you! your form is submitted successfully." )) 
+     .then(() => { window.location.reload(); })
+      .catch(error => console.error('Error!', error.message)) })
+       </script>
+    
+</head>
+<body>
+    <div id="form-main">
+    <form id="address_form" method="post" action="https://script.google.com/macros/s/AKfycbx0hhAAUO6M4k1v7syUrjbnBXeRz_mWsxjhKRBtNwRxuC3Pjr8a_qxaspQyuw4BKRZr/exec" name="orderform">
+        <h1 align="center">Shipping Address</h1>
+          
+        <div class="form-group" >
+            <label for="full-name">Full Name:</label>
+            <input type="text" id="full-name" name="name" required>
+        </div>
+        <div class="form-group">
+            <label for="address">Address:</label>
+            <input type="text" id="address" name="address" required>
+        </div>
+        <div class="form-group">
+            <label for="city">City:</label>
+            <input type="text" id="city" name="city" required>
+        </div>
+        <div class="form-group">
+            <label for="state">State:</label>
+            <input type="text" id="state" name="state" required>
+        </div>
+        <div class="form-group">
+            <label for="zip">Zip Code:</label>
+            <input type="text" id="zip" name="zip" required>
+        </div>
+
+       
+
+  
+    
+</div> 
+
+</div>
+<hr>
+
+<section>
+    <h1 align="center">Select a Payment Option</h1>
+    <hr>
+    <br>
+    <br>
+    <br>
+    <div class="payment-options">
+        <div class="payment-option" id="codOption">
+            <h2>Cash on Delivery</h2>
+        </div>
+        <div class="payment-option" id="cardOption">
+            <h2>Credit/Debit Card</h2>
+        </div>
+        <div class="payment-option" id="upiOption">
+            <h2>UPI</h2>
+        </div>
+    </div>
+
+    <div id="paymentDetails">
+        <!-- Payment form field     s can be added here -->
+        
+    </div>
+    <br>
+    <center>
+    <a href=""><button type="submit" >Place order</button></a>
+</center>
+</form>
+</section>
+<script>
+    const paymentOptions = document.querySelectorAll(".payment-option");
+    const paymentDetails = document.getElementById("paymentDetails");
+
+    paymentOptions.forEach(option => {
+        option.addEventListener("click", () => {
+            // Remove the "selected" class from all options
+            paymentOptions.forEach(opt => opt.classList.remove("selected"));
+            // Add the "selected" class to the clicked option
+            option.classList.add("selected");
+
+            // Show or hide payment details based on the selected option
+            if (option.id === "codOption") {
+                paymentDetails.innerHTML = "COD is available for orders up to a certain value, which may vary depending on your location  . <br/>   <br/> Some areas may not be eligible for COD, and you'll be informed during the checkout process"
+                "Some areas may not be eligible for COD, and you'll be informed during the checkout process";
+            } else if (option.id === "cardOption") {
+                paymentDetails.innerHTML = "Credit/Debit Card form here";
+            } else if (option.id === "upiOption") {
+                paymentDetails.innerHTML = "UPI payment details here";
+            }
+        });
+    });
+</script>
+<script>
+    
+</script>
+    
+</body>
+</html>

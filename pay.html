@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+   
+
+   .container{
+    display: none;
+}
+#cod{
+    display: none;
+}
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            width: 30%;
+        }
+        
+        h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        
+        .payment-form {
+            text-align: left;
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        label {
+            display: block;
+            margin-top: 10px;
+        }
+        
+        .container input {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        
+        .form-row {
+            display: flex;
+            justify-content: space-between;
+        }
+        
+        button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background-color: #0074a2;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        
+        button:hover {
+            background-color: #00537e;
+        }
+
+        #payment-option{
+            background-color: #00537e;
+            color: white;
+        }
+        #payment2{
+            background-color: #00537e;
+            color: white;
+        }
+            </style>
+            <style>
+               
+                .payment-options {
+                    display: flex;
+                    justify-content: space-around;
+                }
+                .payment-option {
+                    width: 100%;
+                    padding: 20px;
+                    border: 1px solid #ccc;
+                    text-align: center;
+                    cursor: pointer;
+                }
+                
+                .payment-option:hover {
+                    background-color: #4CAF50;
+                
+                }
+                .payment-option.selected {
+                    background-color: #4CAF50;
+                    color: #fff;
+                }
+                .payment-option2{
+                    background-color: #00537e;
+                    color: #f0f0f0;
+                    height: 30px;
+                    text-align: center;
+                    height: 70px;
+                    padding: 10px;
+                    margin-top: 10px;
+                }
+            </style>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .payment-options {
+            display: flex;
+            justify-content: space-around;
+        }
+        .payment-option {
+            width: 30%;
+            padding: 20px;
+            border: 1px solid #ccc;
+            text-align: center;
+            cursor: pointer;
+        }
+        .payment-option:hover {
+            background-color: #f0f0f0;
+        }
+        .payment-option.selected {
+            background-color: #4CAF50;
+            color: #fff;
+        }
+    </style>
+<style>
+
+  
+
+.maincontainer {
+  max-width: 450px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  background-color: #f9f9f9;
+}
+
+
+.heading, .orheading {
+  text-align: center;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+
+.curentlocation {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  background-color: #0074a2;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+
+.subheading {
+  display: block;
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+.input-box {
+  width: 420px;
+  padding: 10px;
+  margin: 5px 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+
+.checkbox {
+  margin-right: 10px;
+}
+
+
+.submit {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  background-color: #0074a2;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  margin-top: 10px;
+}
+#place{
+    width: 30%;
+    background-color: #4CAF50;
+}
+#submit-button{
+    background-color: #4CAF50;
+}
+
+</style>
+
+    <title>Document</title>
+</head>
+<body>
+    <div>
+<div class="maincontainer">
+
+        <div class="heading">Edit your address</div>
+        
+        <button class="curentlocation">Use Current location</button>
+        
+        <div class="orheading">OR</div>
+        
+<form action="https://script.google.com/macros/s/AKfycbzJ4lqRfpVsvBKBgYzNKdqOPwi2WNpzaPzybhfvvrffHhrUCTDOp7qgIAJJ3mP4WOD2/exec" method="post">
+
+        <label for="Full-name" class="subheading">Full name(First Name and Last Name)</label>
+            <input type="text" class="input-box" placeholder="" value=""  name="Full_name">
+
+        <label for="Mobile-number" class="subheading">Mobile-number</label>
+            <input type="text" class="input-box" placeholder="" value=""  name="Mobile_number">
+
+        <label for="Addres-1" class="subheading">Flat, House no, Building, Company</label>
+            <input type="text" class="input-box" placeholder="" value=""  name="Flat/House">  
+            
+        <label for="Address-2" class="subheading">Area</label>
+            <input type="text" class="input-box" placeholder="" value=""  name="Area">  
+
+        <label for="Landmark" class="subheading">Landmark</label>
+            <input type="text" class="input-box" placeholder="" value=""  name="Landmark">   
+            
+        <label for="Pincode" class="subheading">Pincode</label>
+            <input type="text" class="input-box" placeholder="" value=""  name="Pincode">  
+          
+        <label for="Town/City" class="subheading">Town/City</label>
+            <input type="text" class="input-box" placeholder="" value=""  name="Town/City">  
+            
+            <label for="quantity" class="subheading">Quantity</label>
+            <input type="text" class="input-box" placeholder="" value="" name="Quantity">
+
+            <label for="State" class="subheading">State</label>
+            <input type="text" class="input-box" placeholder="" value=""  name="State">
+
+              
+    <h1>Select a Payment Option</h1>
+    
+    <div class="payment-options" onclick="hide_show()" id="payment-option">
+            <h2>Cash on Delivery</h2>
+       
+           
+        </div>
+    
+
+        <div class="payment-option2" id="cardOption" onclick="card_show()" ondblclick="sub_show()" id="payment2">
+            <h2 >Credit/Debit Card</h2>
+        </div>
+    
+        
+    </div>
+    <div id="cod" ><h1 align="center ">cod
+       <center> <button type="submit" id="place">Place order</button></center>
+    </h1></div>
+    <br>
+    <br>
+    <br>
+    
+    <center>
+      <div class="container" id="card">
+        <h1>Checkout</h1>
+        <div class="payment-form">
+            <label for="card-number">Card Number</label>
+            <input type="text" id="card-number" placeholder="1234 5678 9012 3456">
+            
+            <div class="form-row">
+                <div>
+                    <label for="expiry">Expiry Date</label>
+                    <input type="text" id="expiry" placeholder="MM/YY">
+                </div>
+                <div>
+                    <label for="cvv">CVV</label>
+                    <input type="text" id="cvv" placeholder="123">
+                </div>
+            </div>
+            
+            <label for="name">Cardholder's Name</label>
+            <input type="text" id="name" placeholder="John Doe">
+            
+            <button id="submit-button">Pay Now</button>
+        </div>
+    </div>
+ </center>
+ </form>
+</div>
+
+    <script>
+        function hide_show(){
+           var x=document.getElementById("cod");
+           
+           if(x.style.display==="none"){
+            x.style.display="block"
+           }
+
+           else{
+            x.style.display="none"
+           }
+        
+        }
+    </script>
+     <script>
+        function card_show(){
+           var x=document.getElementById("card");
+           
+           if(x.style.display==="none"){
+            x.style.display="block"
+           }
+
+           else{
+            x.style.display="none"
+           }
+        
+        }
+    </script>
+       
+
+
+
+      
+
+</body>
+</html>
